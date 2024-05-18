@@ -3,6 +3,8 @@ import { Estadio } from "./src/models/estadio.model";
 import { Jugador } from "./src/models/jugador.model";
 
 let estadio1 = new Estadio({id:1, nombre: 'Metropolitano', capacidad:11000});
+let estadio2 = new Estadio({id:2, nombre: 'Bicentenario', capacidad:23000});
+let estadio3 = new Estadio({id:3, nombre: 'Romelio Martínez', capacidad:17000});
 // console.log(estadio1);
 
 let jugador1 = new Jugador({id:1, nombre:'Ronald Carrillo',edad:43, posicion: 'GK'});
@@ -12,8 +14,8 @@ let jugadores = [jugador1, jugador2, jugador3];
 // console.log(jugador1);
 
 let equipo1 = new Equipo({id:1, nombre:'Deportivo Tapita',tipo:"Futbol", ciudad:"Medellín",colores:"Azul",estadio:estadio1,jugadores:jugadores});
-let equipo2 = new Equipo({id:2, nombre:'Deportivo Oyita',tipo:"Futbol", ciudad:"Santa Marta",colores:"Naranja",estadio:estadio1,jugadores:jugadores});
-let equipo3 = new Equipo({id:3, nombre:'Los Caimanes',tipo:"Beisbol", ciudad:"Barranquilla",colores:"Rojo",estadio:estadio1,jugadores:jugadores});
+let equipo2 = new Equipo({id:2, nombre:'Deportivo Oyita',tipo:"Futbol", ciudad:"Santa Marta",colores:"Naranja",estadio:estadio2,jugadores:jugadores});
+let equipo3 = new Equipo({id:3, nombre:'Los Caimanes',tipo:"Beisbol", ciudad:"Barranquilla",colores:"Rojo",estadio:estadio3,jugadores:jugadores});
 let equipos = [equipo1, equipo2, equipo3];
 
 function filter<T>(jugadores: T[], property: keyof T, value: T[keyof T]): T[]{
@@ -22,4 +24,5 @@ function filter<T>(jugadores: T[], property: keyof T, value: T[keyof T]): T[]{
 
 // console.log(filter<Jugador>(jugadores, "edad", 73));
 // console.log(filter<Jugador>(jugadores, "posicion", "DFR"));
-console.log(filter<Equipo>(equipos, "tipo", "Futbol"));
+// console.log(filter<Equipo>(equipos, "tipo", "Futbol"));
+console.log(filter<Equipo>(equipos, "ciudad", "Medellín"));
